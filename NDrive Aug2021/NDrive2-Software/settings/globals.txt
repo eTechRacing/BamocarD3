@@ -1,0 +1,167 @@
+//-----------------------------------------------------------------------------------------------
+softwareVersion=3.03.58
+showVersionInTitle=0
+
+title=NDrive Utility Software
+//title=XXXX Utility Software
+
+//iniFile=
+//logFile=
+
+
+//-----------------------------------------------------------------------------------------------
+defaultFirmware=478
+defaultBaudrate= 115200
+defaultLanguage=en;de
+
+
+//-----------------------------------------------------------------------------------------------
+// adjusting  some COMxxx settings
+//
+COMFair=1			// enables the fair and/or priority access of threads to COM register transfers
+COMFlushBeforeCommand=1		// test for unexpected read data left over from previous command
+//COMFlushAfterWrite=1		//forces a flush file command after writing data to the COM por
+
+COMReadTimeout=200		//maximum delay  in ms   before a reply fail
+COMWaitCommand=0		//waits (sleeps) in ms   before sending each command to the drive
+COMWaitReply=5			//waits (sleeps) in ms   before reading a reply from the drive
+
+
+sleepGranularity=2
+preventPCEnergySaving=1
+
+
+//-----------------------------------------------------------------------------------------------
+// translateStringMode  - defaults to 0
+//                      0: standard language translation
+//                      1: no translation at all
+//                      2: standard language translation followed by escape sequence translation (eg HTML &, possibly UTF8 in the future)
+translateStringMode=2
+
+
+//-----------------------------------------------------------------------------------------------
+// versionRegisterFile  - defaults to 1.0
+//                      1.0: standard version   older versions of NDrive will produce an error box on reading any other version
+//                      1.1: each entry has a regid size value type as a single byte
+
+versionRegisterFile=1.1
+//versionRegisterFile=1.0
+
+
+//-----------------------------------------------------------------------------------------------
+// progressConnect      - defaults to false (0), backward compatible
+//                      1: show a progress bar during connection
+progressConnect=1
+
+//-----------------------------------------------------------------------------------------------
+// messageBoxDialog     - defaults to 0, backward compatible
+//                      0: always use the  "modal"(application-blocking) dialog
+//                      1: question popups "modal"(application-blocking) dialog, otherwise "non modal" parallel dialog
+//                      2: always use the  "non modal" (non-application-blocking) parallel dialog
+messageBoxDialog=2
+
+//-----------------------------------------------------------------------------------------------
+// directory structure / access
+//                 e.g. languageFilePrefix=Drive;Shared;User;HKx    last in list takes precedence
+//
+imagesPath=images\unitek\;images\;images\pictograms\;images\leds\;images\logos\;images\messageBox\
+
+languagePath=languages\
+languageFilePrefix=NDrive;Shared
+//languageFilePrefix=NDrive;Shared;User
+
+startupOscilloscopeFile=lastused;settings\UniTek_default.uof
+//startupOscilloscopeFile=lastused;settings\XXXX_default.uof
+
+
+translation="Oscilloscope File (*.uof)|*.uof"=Oscilloscope File (*.uof)|*.uof|Oscilloscope File (*.txt)|*.txt
+
+osciCaptureChunk= 32	//=50 default	// captures data per chunck,  smaller reduces variance of other register transfers (stepGen, readOnly, status)
+
+
+// outputFilesFolder=c:\somewhere\else\for\files\
+outputFilesFolder=  outputfiles\
+//outputFilesFolder=c:\outputfiles\
+
+
+//-----------------------------------------------------------------------------------------------
+// browserMode     - defaults to 0, backward compatible
+//                 0: if (wxURL(url).IsOk()) wxLaunchDefaultBrowser(url)
+//                 1: wxLaunchDefaultBrowser(url)
+//                 2: doViewFileInBrowser(url) as a workaround
+//                 3: disables following of links
+browserMode=1
+
+
+//-----------------------------------------------------------------------------------------------
+// helpMenuMode    - default to 0  - generates the top menu->Help as follows
+//                 0:Manual\tF1             1:Manual\tF1             2:Manuals >---sub-menu---> Manual\tF1
+//                   &About...                Se&lect man...           &About...                Se&lect man...
+//                   &Info...                 &Online man...           &Info...                 &Online man...
+//                   ---------                ---------                ---------
+//                   Change Language...       &About...                Change Language...
+//                                            &Info...
+//                                            ---------
+//                                            Change Language...
+//
+//                -- Manual\tF1    : opens the file directly helpPath+helpFilePrefix+lang+helpFileExtension for the chosen lang, retries with "en" if lang fails
+//                -- Se&lect man...: opens a windows file dialog to select a file from the helpPath folder
+//                -- &Online man...: follows the link generated by helpOnline
+helpMenuMode=1
+
+helpPath=manuals\
+helpFileExtension=".pdf"
+
+helpFilePrefix="NDrive_"
+//helpFilePrefix="NDrive_XXXX_"
+
+helpOnline="https://www.unitek-industrie-elektronik.de/menu-ndrive-%lang%/menu-ndrive-manual-%lang%"
+//https://www.unitek-industrie-elektronik.de/download
+//https://www.unitek-industrie-elektronik.de/menu-ndrive-de/menu-ndrive-manual-%lang%
+//https://www.unitek-industrie-elektronik.de/menu-ndrive-en/menu-ndrive-manual-en
+
+
+//-----------------------------------------------------------------------------------------------
+// Send Settings extra  - defaults to false (0), backward compatible
+//                      1: appends the translated about text to the email message tex
+emailAbout=0
+
+emailRecipient="info@unitek.eu"
+
+
+//-----------------------------------------------------------------------------------------------
+// about
+//
+aboutBuildID= "  1.03.2107x.001"
+aboutIcon=logo.bmp
+aboutVisit="\n- Homepage\t https://www.unitek-industrie-elektronik.de/"
+aboutVisit+="\n- Download\t https://www.unitek-industrie-elektronik.de/download"
+//aboutVisit+="\n- PDF     \t https://www.unitek-industrie-elektronik.de/images/pdf/NDrive/NDrive_DE.pdf"
+//aboutVisit+="\n- Lang    \t before_%lang%_after"
+//aboutVisit+="\n- Var     \t before_%var:tApp:%_after"
+
+copyright= (c)2005-2021   UniTek Industrie Elektronik GmbH
+
+
+//-----------------------------------------------------------------------------------------------
+// bitListTooltip       - default 0   - as bit values (can be or'ed together)
+//                      -- 0x01   tooltip shown when hovering over the LED
+//                      -- 0x02   tooltip shown when hovering over the text
+bitListTooltip=0x03
+
+
+//-----------------------------------------------------------------------------------------------
+pageOrder= Home,Settings,Logic,Position,Speed,BUS,Monitor,Device,Diagnostic,Oszilloskop,Extra
+pageOrder= defined
+
+homeURLClick= 0,0,0,0
+startPage= "Settings"
+
+
+//-----------------------------------------------------------------------------------------------
+// some predefining default conditions
+variable= oscPsel=1
+variable= psDisp=1
+
+
+//-----------------------------------------------------------------------------------------------

@@ -1,0 +1,30 @@
+units=decimal   system=-1   text=dec
+units=hex       system=-1   text=hex isHex=3
+units=bit0      system=-1   text=b0  fromRaw="(x>>0) & 1"
+units=bit1      system=-1   text=b1  fromRaw="(x>>1) & 1"
+units=bit2      system=-1   text=b2  fromRaw="(x>>2) & 1"
+units=bit3      system=-1   text=b3  fromRaw="(x>>3) & 1"
+units=bit4      system=-1   text=b4  fromRaw="(x>>4) & 1"
+units=bit5      system=-1   text=b5  fromRaw="(x>>5) & 1"
+units=bit6      system=-1   text=b6  fromRaw="(x>>6) & 1"
+units=bit7      system=-1   text=b7  fromRaw="(x>>7) & 1"
+units=bit8      system=-1   text=b8  fromRaw="(x>>8) & 1"
+units=bit9      system=-1   text=b9  fromRaw="(x>>9) & 1"
+units=bit10     system=-1   text=b10 fromRaw="(x>>10) & 1"
+units=bit11     system=-1   text=b11 fromRaw="(x>>11) & 1"
+units=bit12     system=-1   text=b12 fromRaw="(x>>12) & 1"
+units=bit13     system=-1   text=b13 fromRaw="(x>>13) & 1"
+units=bit14     system=-1   text=b14 fromRaw="(x>>14) & 1"
+units=bit15     system=-1   text=b15 fromRaw="(x>>15) & 1"
+units=nibble0   system=-1   text=n0  fromRaw="(x>>0) & 0x0f"   isHex=3
+units=nibble1   system=-1   text=n1  fromRaw="(x>>4) & 0x0f"   isHex=3
+units=nibble2   system=-1   text=n2  fromRaw="(x>>8) & 0x0f"   isHex=3
+units=nibble3   system=-1   text=n3  fromRaw="(x>>12) & 0x0f"  isHex=3
+units=byte0     system=-1   text=by0 fromRaw="(x>>0) & 0x00ff" isHex=3
+units=byte1     system=-1   text=by1 fromRaw="(x>>8) & 0x00ff" isHex=3
+
+unitsList=bits16List    bit0,bit1,bit2,bit3,bit4,bit5,bit6,bit7,bit8,bit9,bit10,bit11,bit12,bit13,bit14,bit15
+unitsList=nibbles16List nibble0,nibble1,nibble2,nibble3
+unitsList=bytes16List   byte0,byte1
+unitsList=map16List     decimal,hex,bits16List,nibbles16List,bytes16List
+unitsList=hex16List	decimal,hex
